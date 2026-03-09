@@ -46,7 +46,7 @@ const SceneDisplay = ({ scene, onChoice, inventory }: SceneDisplayProps) => {
             return (
               <ChoiceButton
                 key={idx}
-                text={choice.requiredItem && isLocked ? `[Requires ${choice.requiredItem}] ${choice.text}` : choice.text}
+                text={choice.requiredItem && isLocked ? `[Requer ${choice.requiredItem}] ${choice.text}` : choice.text}
                 onClick={() => onChoice(idx)}
                 isLocked={isLocked}
               />

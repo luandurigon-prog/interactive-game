@@ -26,7 +26,7 @@ const Index = () => {
     const newInventory = [...state.inventory];
     if (choice.givesItem && !newInventory.includes(choice.givesItem)) {
       newInventory.push(choice.givesItem);
-      showSuccess(`Obtained: ${choice.givesItem}`);
+      showSuccess(`Item Obtido: ${choice.givesItem}`);
     }
 
     // Update Stats

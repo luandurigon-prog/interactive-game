@@ -3,81 +3,81 @@ import { Scene } from "../types/game";
 export const STORY_DATA: Record<string, Scene> = {
   start: {
     id: "start",
-    title: "The Rusty Gates",
-    description: "You stand before the massive bronze gates of Aethelgard, the floating clockwork city. Steam hisses from hidden vents, and the smell of ozone fills the air. The path ahead is shrouded in golden mist.",
+    title: "Os Portões Enferrujados",
+    description: "Você está diante dos imensos portões de bronze de Aethelgard, a cidade flutuante movida a engrenagens. O vapor sibila por aberturas escondidas, e o cheiro de ozônio preenche o ar. O caminho à frente está envolto em uma névoa dourada.",
     imageUrl: "https://images.unsplash.com/photo-1534447677768-be436bb09401?q=80&w=1000&auto=format&fit=crop",
     choices: [
-      { text: "Examine the intricate lock mechanism", nextSceneId: "examine_lock", statChanges: { bravery: 1 } },
-      { text: "Call out to the city guards", nextSceneId: "call_guards" },
-      { text: "Search the nearby debris for tools", nextSceneId: "search_debris", givesItem: "Small Brass Key" }
+      { text: "Examinar o intrincado mecanismo da fechadura", nextSceneId: "examine_lock", statChanges: { bravery: 1 } },
+      { text: "Chamar pelos guardas da cidade", nextSceneId: "call_guards" },
+      { text: "Procurar ferramentas nos escombros próximos", nextSceneId: "search_debris", givesItem: "Chave Pequena de Latão" }
     ]
   },
   examine_lock: {
     id: "examine_lock",
-    title: "The Masterpiece Lock",
-    description: "The lock is a work of art, featuring rotating celestial spheres. It seems to respond to warmth. As your hand nears, the gears click expectantly.",
+    title: "A Fechadura Obra-Prima",
+    description: "A fechadura é uma obra de arte, com esferas celestiais rotativas. Parece responder ao calor. Conforme sua mão se aproxima, as engrenagens estalam em expectativa.",
     imageUrl: "https://images.unsplash.com/photo-1511192336575-5a79af67a629?q=80&w=1000&auto=format&fit=crop",
     choices: [
-      { text: "Try to pick it with your dagger", nextSceneId: "broken_lock", statChanges: { sanity: -5 } },
-      { text: "Use the Brass Key", nextSceneId: "city_square", requiredItem: "Small Brass Key" },
-      { text: "Go back to the gate", nextSceneId: "start" }
+      { text: "Tentar forçá-la com sua adaga", nextSceneId: "broken_lock", statChanges: { sanity: -5 } },
+      { text: "Usar a Chave de Latão", nextSceneId: "city_square", requiredItem: "Chave Pequena de Latão" },
+      { text: "Voltar para o portão", nextSceneId: "start" }
     ]
   },
   search_debris: {
     id: "search_debris",
-    title: "Among the Ruins",
-    description: "Underneath a pile of rusted cogs, you find a Small Brass Key. It pulses with a faint blue light.",
+    title: "Entre as Ruínas",
+    description: "Debaixo de uma pilha de engrenagens enferrujadas, você encontra uma Chave Pequena de Latão. Ela pulsa com uma fraca luz azul.",
     imageUrl: "https://images.unsplash.com/photo-1446776811953-b23d57bd21aa?q=80&w=1000&auto=format&fit=crop",
     choices: [
-      { text: "Return to the gate with the key", nextSceneId: "start" }
+      { text: "Retornar ao portão com a chave", nextSceneId: "start" }
     ]
   },
   call_guards: {
     id: "call_guards",
-    title: "Silence from Above",
-    description: "Your voice echoes through the metal canyons of the city, but only the sound of grinding gears answers. Suddenly, a mechanical owl swoops down, watching you with sapphire eyes.",
+    title: "Silêncio Vindo do Alto",
+    description: "Sua voz ecoa pelos cânions de metal da cidade, mas apenas o som de engrenagens rangendo responde. De repente, uma coruja mecânica mergulha, observando você com olhos de safira.",
     imageUrl: "https://images.unsplash.com/photo-1501554728187-ce583db33af7?q=80&w=1000&auto=format&fit=crop",
     choices: [
-      { text: "Follow the mechanical owl", nextSceneId: "hidden_passage", statChanges: { bravery: 5 } },
-      { text: "Retreat in fear", nextSceneId: "start", statChanges: { sanity: -10 } }
+      { text: "Seguir a coruja mecânica", nextSceneId: "hidden_passage", statChanges: { bravery: 5 } },
+      { text: "Recuar de medo", nextSceneId: "start", statChanges: { sanity: -10 } }
     ]
   },
   city_square: {
     id: "city_square",
-    title: "The Grand Plaza",
-    description: "The gates swing open with a melodic chime. You step into a plaza paved with shimmering obsidian. In the center stands a fountain of liquid silver.",
+    title: "A Grande Praça",
+    description: "Os portões se abrem com um carrilhão melódico. Você entra em uma praça pavimentada com obsidiana cintilante. No centro, ergue-se uma fonte de prata líquida.",
     imageUrl: "https://images.unsplash.com/photo-1518709268805-4e9042af9f23?q=80&w=1000&auto=format&fit=crop",
     choices: [
-      { text: "Drink from the silver fountain", nextSceneId: "ascension_ending", statChanges: { bravery: 10 } },
-      { text: "Investigate the Great Archive", nextSceneId: "archive" }
+      { text: "Beber da fonte de prata", nextSceneId: "ascension_ending", statChanges: { bravery: 10 } },
+      { text: "Investigar o Grande Arquivo", nextSceneId: "archive" }
     ]
   },
   hidden_passage: {
     id: "hidden_passage",
-    title: "The Steam Tunnels",
-    description: "The owl leads you through a narrow vent into the belly of the city. Hissing pipes and glowing pressure gauges surround you. You feel the weight of the city above.",
+    title: "Os Túneis de Vapor",
+    description: "A coruja leva você por uma pequena ventilação até as entranhas da cidade. Canos sibilantes e medidores de pressão brilhantes o cercam. Você sente o peso da cidade acima.",
     imageUrl: "https://images.unsplash.com/photo-1485827404703-89b55fcc595e?q=80&w=1000&auto=format&fit=crop",
     choices: [
-      { text: "Push forward into the dark", nextSceneId: "city_square" },
-      { text: "Try to find a map", nextSceneId: "search_debris", givesItem: "City Map" }
+      { text: "Seguir em frente na escuridão", nextSceneId: "city_square" },
+      { text: "Tentar encontrar um mapa", nextSceneId: "search_debris", givesItem: "Mapa da Cidade" }
     ]
   },
   broken_lock: {
     id: "broken_lock",
-    title: "A Costly Mistake",
-    description: "The mechanism shrieks as your dagger snaps inside. A defensive alarm blares, and steam jets fill the air. You barely escape with your life.",
+    title: "Um Erro Caro",
+    description: "O mecanismo grita enquanto sua adaga quebra lá dentro. Um alarme defensivo soa e jatos de vapor preenchem o ar. Você escapa por pouco com vida.",
     imageUrl: "https://images.unsplash.com/photo-1533134486753-c833f0ed4866?q=80&w=1000&auto=format&fit=crop",
     choices: [
-      { text: "Try to start over", nextSceneId: "start" }
+      { text: "Tentar recomeçar", nextSceneId: "start" }
     ]
   },
   ascension_ending: {
     id: "ascension_ending",
-    title: "Ending: The New Architect",
-    description: "As the silver liquid touches your lips, your mind expands. You see the clockwork of the universe. The city recognizes you as its new master. You have ascended.",
+    title: "Final: O Novo Arquiteto",
+    description: "Assim que o líquido prateado toca seus lábios, sua mente se expande. Você vê a engrenagem do universo. A cidade reconhece você como seu novo mestre. Você ascendeu.",
     imageUrl: "https://images.unsplash.com/photo-1464802686167-b939a6910659?q=80&w=1000&auto=format&fit=crop",
     choices: [
-      { text: "Play Again", nextSceneId: "start" }
+      { text: "Jogar Novamente", nextSceneId: "start" }
     ]
   }
 };

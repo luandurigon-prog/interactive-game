@@ -13,7 +13,7 @@ const StatsBar = ({ sanity, bravery, inventory }: StatsBarProps) => {
       <div className="flex gap-6">
         <div className="flex items-center gap-2">
           <Brain className="text-purple-500 w-5 h-5" />
-          <span className="font-semibold text-sm">Sanity: {sanity}%</span>
+          <span className="font-semibold text-sm">Sanidade: {sanity}%</span>
           <div className="w-24 h-2 bg-muted rounded-full overflow-hidden">
             <div 
               className="h-full bg-purple-500 transition-all duration-500" 
@@ -23,14 +23,14 @@ const StatsBar = ({ sanity, bravery, inventory }: StatsBarProps) => {
         </div>
         <div className="flex items-center gap-2">
           <Shield className="text-amber-500 w-5 h-5" />
-          <span className="font-semibold text-sm">Bravery: {bravery}</span>
+          <span className="font-semibold text-sm">Bravura: {bravery}</span>
         </div>
       </div>
       
       <div className="flex items-center gap-3 overflow-x-auto max-w-[40%] px-2">
         <Package className="text-blue-500 w-5 h-5 shrink-0" />
         {inventory.length === 0 ? (
-          <span className="text-xs text-muted-foreground">Empty Pockets</span>
+          <span className="text-xs text-muted-foreground">Bolsos Vazios</span>
         ) : (
           <div className="flex gap-2">
             {inventory.map((item, i) => (
